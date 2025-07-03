@@ -188,3 +188,52 @@ button:hover {
 .close:hover {
   color: #333;
 }
+
+
+/* adding form here *
+/* ✅ Fade-in animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: fadeInScale 0.4s ease;
+}
+
+/* ✅ Add icons to service blocks */
+.service {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.service:nth-child(1)::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png'); /* Web Design */
+}
+
+.service:nth-child(2)::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png'); /* SEO */
+}
+
+.service:nth-child(3)::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png'); /* Marketing */
+}
