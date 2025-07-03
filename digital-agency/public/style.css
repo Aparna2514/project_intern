@@ -99,7 +99,6 @@ button:hover {
   line-height: 1.6;
 }
 
-/* ✅ FIXED: Now correctly placed outside */
 #services {
   position: relative;
   z-index: 2;
@@ -125,11 +124,39 @@ button:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   font-weight: 500;
   color: #1a56db;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .service:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Service icons above each block */
+.service::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.service:nth-child(1)::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png'); /* Web Design */
+}
+
+.service:nth-child(2)::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png'); /* SEO */
+}
+
+.service:nth-child(3)::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png'); /* Marketing */
 }
 
 /* ✅ Modal styles */
@@ -146,15 +173,41 @@ button:hover {
   align-items: center;
 }
 
+/* ✅ Modal box with floating stars/icons inside only */
 .modal-content {
-  background: #fff;
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
   padding: 40px 30px;
-  border-radius: 12px;
+  border-radius: 16px;
   width: 90%;
   max-width: 500px;
   position: relative;
   text-align: left;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeInScale 0.4s ease;
+  overflow: hidden;
+}
+
+/* ✨ Icon-starry pattern inside the modal only */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png'),
+    url('https://cdn-icons-png.flaticon.com/512/809/809957.png'),
+    url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png');
+  background-repeat: repeat;
+  background-size: 18px, 12px, 14px;
+  background-position: 10% 20%, 50% 50%, 80% 30%;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure text floats above background stars */
+.modal-content > * {
+  position: relative;
+  z-index: 1;
 }
 
 .modal-content h3 {
@@ -183,14 +236,13 @@ button:hover {
   font-size: 28px;
   color: #999;
   cursor: pointer;
+  z-index: 2;
 }
 
 .close:hover {
   color: #333;
 }
 
-
-/* adding form here *
 /* ✅ Fade-in animation */
 @keyframes fadeInScale {
   0% {
@@ -201,39 +253,4 @@ button:hover {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.modal-content {
-  animation: fadeInScale 0.4s ease;
-}
-
-/* ✅ Add icons to service blocks */
-.service {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.service::before {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-bottom: 15px;
-}
-
-.service:nth-child(1)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png'); /* Web Design */
-}
-
-.service:nth-child(2)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png'); /* SEO */
-}
-
-.service:nth-child(3)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png'); /* Marketing */
 }
