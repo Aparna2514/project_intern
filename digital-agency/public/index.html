@@ -31,10 +31,28 @@
     <div class="hero-animation" id="lottie-animation"></div>
   </section>
 
+  <!-- 🔧 Fix for spacing after animation -->
+  <div style="clear: both; height: 40px;"></div>
+
+  <!-- ✅ ENHANCED SERVICES SECTION -->
   <section id="services" class="content-section">
     <h2>Our Services</h2>
-    <p>We offer SEO, social media marketing, Google Ads, and more to boost your digital presence.</p>
+    <div class="service-list">
+      <div class="service" onclick="openModal('design')">Web Design</div>
+      <div class="service" onclick="openModal('seo')">SEO Optimization</div>
+      <div class="service" onclick="openModal('marketing')">Digital Marketing</div>
+    </div>
   </section>
+
+  <!-- ✅ MODAL STRUCTURE -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <a href="#contact" class="contact-link">Interested? Contact us!</a>
+    </div>
+  </div>
 
   <section id="portfolio" class="content-section">
     <h2>Portfolio</h2>
