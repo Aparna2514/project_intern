@@ -317,3 +317,31 @@ button:hover {
   right: -50px;
 }
 
+
+.arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2.5rem; /* bigger hands */
+  color: #c13584; /* pretty pink */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-arrow {
+  left: -100px; /* more distance from cube */
+}
+
+.right-arrow {
+  right: -100px; /* more distance from cube */
+}
+
+.arrow:hover {
+  color: #e75480; /* lighter pink on hover */
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: #e75480;
+}

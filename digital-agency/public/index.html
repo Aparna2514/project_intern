@@ -8,6 +8,12 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome for pointing hand icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -54,23 +60,26 @@
     </div>
   </div>
 
-<section id="portfolio" class="content-section">
-  <h2>Portfolio</h2>
-  <p>Here are some of the amazing campaigns we've worked on.</p>
+  <section id="portfolio" class="content-section">
+    <h2>Portfolio</h2>
+    <p>Here are some of the amazing campaigns we've worked on.</p>
 
-  <div class="cube-container">
-    <div class="cube" id="cube">
-      <div class="face front">Campaign 1</div>
-      <div class="face back">Campaign 2</div>
-      <div class="face right">Campaign 3</div>
-      <div class="face left">Campaign 4</div>
+    <div class="cube-container">
+      <div class="cube" id="cube">
+        <div class="face front">Campaign 1</div>
+        <div class="face back">Campaign 2</div>
+        <div class="face right">Campaign 3</div>
+        <div class="face left">Campaign 4</div>
+      </div>
+      <!-- ✅ Updated arrow buttons: pointing hands -->
+      <button class="arrow left-arrow" onclick="rotateCube('left')">
+        <i class="fas fa-hand-point-left"></i>
+      </button>
+      <button class="arrow right-arrow" onclick="rotateCube('right')">
+        <i class="fas fa-hand-point-right"></i>
+      </button>
     </div>
-    <button class="arrow left-arrow" onclick="rotateCube('left')">&#9664;</button>
-    <button class="arrow right-arrow" onclick="rotateCube('right')">&#9654;</button>
-    
-  </div>
-</section>
-
+  </section>
 
   <section id="contact" class="content-section">
     <h2>Contact Us</h2>
