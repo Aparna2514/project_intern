@@ -49,3 +49,17 @@ window.addEventListener("click", function(e) {
     closeModal();
   }
 });
+
+let angle = 0;
+
+function rotateCube(direction) {
+  if (direction === 'left') {
+    angle -= 90;
+  } else if (direction === 'right') {
+    angle += 90;
+  }
+  document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
+}
+
+
+
