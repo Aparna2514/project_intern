@@ -60,6 +60,7 @@ nav a {
   line-height: 1.6;
 }
 
+
 button {
   padding: 12px 25px;
   background-color: #1a56db;
@@ -344,4 +345,126 @@ button:hover {
 .arrow:hover {
   transform: translateY(-50%) scale(1.1);
   color: #e75480;
+}
+
+
+/* Contact Us Section */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+  outline: none;
+}
+
+.contact-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #1e40af;
+}
+
+.contact-status {
+  color: green;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.contact-spacer {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 40px;
+  line-height: 1.8;
+}
+
+.contact-info i {
+  margin-right: 6px;
+}
+
+.contact-social {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.social-icon {
+  margin: 0 15px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.instagram {
+  color: #e1306c;
+}
+
+.instagram:hover {
+  color: #c13584;
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.twitter:hover {
+  color: #0d8ddb;
 }

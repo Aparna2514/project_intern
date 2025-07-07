@@ -12,20 +12,11 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-
   />
-
   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-
-
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -95,61 +86,50 @@
   </section>
 
 <!-- Contact Us Section -->
-<section id="contact" style="padding: 60px 20px; background-color: #f9fafb; font-family: 'Poppins', sans-serif;">
-  <div style="max-width: 900px; margin: auto;">
-    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #111;">Contact Us</h2>
-    
-    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+<!-- Enhanced Contact Us Section (Minimal Inline Changes) -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h2 class="contact-title">Contact Us</h2>
+
+    <div class="contact-flex">
       
       <!-- Contact Form -->
-      <form style="flex: 1; min-width: 280px;" onsubmit="event.preventDefault(); alert('Thank you! Message not sent (demo only).');">
-        <label style="display: block; margin-bottom: 10px;">
+      <form class="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-status').textContent = 'Thank you! Message not sent (demo only).';">
+        
+        <label>
           <span>Name</span>
-          <input type="text" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 8px;" />
+          <input type="text" placeholder="John Doe" required class="contact-input" />
         </label>
 
-        <label style="display: block; margin-bottom: 10px;">
+        <label>
           <span>Email</span>
-          <input type="email" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 8px;" />
+          <input type="email" placeholder="you@example.com" required class="contact-input" />
         </label>
 
-        <label style="display: block; margin-bottom: 20px;">
+        <label>
           <span>Message</span>
-          <textarea required rows="5" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
+          <textarea rows="5" placeholder="Write your message..." required class="contact-textarea"></textarea>
         </label>
 
-        <button type="submit" style="background-color: #2563eb; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;">
-          Send Message
-        </button>
+        <button type="submit" class="contact-button">Send Message</button>
+        <p id="form-status" class="contact-status"></p>
       </form>
 
-      <!-- Contact Info -->
-      <div style="flex: 1; min-width: 280px;">
-        <div style="margin-bottom: 20px; display: flex; align-items: center;">
-          <span style="font-size: 1.5rem; margin-right: 10px;">📍</span>
-          <p style="margin: 0;">New Delhi, India</p>
-        </div>
-
-        <div style="margin-bottom: 20px; display: flex; align-items: center;">
-          <span style="font-size: 1.5rem; margin-right: 10px;">📞</span>
-          <p style="margin: 0;">+91 98765 43210</p>
-        </div>
-
-        <div style="margin-bottom: 20px; display: flex; align-items: center;">
-          <span style="font-size: 1.5rem; margin-right: 10px;">✉️</span>
-          <p style="margin: 0;">contact@Digit.x.com</p>
-        </div>
-      </div>
+      <!-- Empty Right Column for Balance -->
+      <div class="contact-spacer"></div>
     </div>
 
-    <!-- Social Media Icons -->
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="#" style="margin: 0 15px; font-size: 1.5rem; color: #e1306c; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c13584'" onmouseout="this.style.color='#e1306c'">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="#" style="margin: 0 15px; font-size: 1.5rem; color: #1da1f2; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0d8ddb'" onmouseout="this.style.color='#1da1f2'">
-        <i class="fab fa-twitter"></i>
-      </a>
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div><i class="fas fa-map-marker-alt"></i> Nagpur, India</div>
+      <div><i class="fas fa-phone-alt"></i> +91 XXXXX XXXXX</div>
+      <div><i class="fas fa-envelope"></i> contact@Digit.x.com</div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="contact-social">
+      <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
     </div>
   </div>
 </section>
