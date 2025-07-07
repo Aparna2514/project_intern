@@ -1,7 +1,3 @@
-// Button click
-document.querySelector("button").addEventListener("click", () => {
-  alert("Let's grow your brand together! 🚀");
-});
 
 // Lottie animation
 lottie.loadAnimation({
