@@ -5,7 +5,7 @@ lottie.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "https://assets4.lottiefiles.com/packages/lf20_tll0j4bb.json"
+  path: "https://lottie.host/f0e15067-8a89-4630-bc04-4df90e4f32d4/Q4RAHRgQgy.json"
 });
 
 // ✅ Services modal functionality
