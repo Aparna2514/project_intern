@@ -8,20 +8,15 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome for pointing hand icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
     <div class="logo">DigitX</div>
     <nav>
@@ -41,10 +36,8 @@
     <div class="hero-animation" id="lottie-animation"></div>
   </section>
 
-  <!-- 🔧 Fix for spacing after animation -->
   <div style="clear: both; height: 40px;"></div>
 
-  <!-- ✅ ENHANCED SERVICES SECTION -->
   <section id="services" class="content-section">
     <h2>Our Services</h2>
     <div class="service-list">
@@ -54,7 +47,6 @@
     </div>
   </section>
 
-  <!-- ✅ MODAL STRUCTURE -->
   <div id="serviceModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -75,7 +67,6 @@
         <div class="face right">Campaign 3</div>
         <div class="face left">Campaign 4</div>
       </div>
-      <!-- ✅ Updated arrow buttons: pointing hands -->
       <button class="arrow left-arrow" onclick="rotateCube('left')">
         <i class="fas fa-hand-point-left"></i>
       </button>
@@ -85,59 +76,51 @@
     </div>
   </section>
 
-<!-- Contact Us Section -->
-<!-- Enhanced Contact Us Section (Minimal Inline Changes) -->
-<section id="contact" class="contact-section">
-  <div class="contact-container">
-    <h2 class="contact-title">Contact Us</h2>
+  <!-- ✅ Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h2 class="contact-title">Contact Us</h2>
 
-    <div class="contact-flex">
-      
-      <!-- Contact Form -->
-      <form class="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-status').textContent = 'Thank you! Message not sent (demo only).';">
-        
-        <label>
-          <span>Name</span>
-          <input type="text" placeholder="John Doe" required class="contact-input" />
-        </label>
+      <div class="contact-flex">
+        <!-- ✅ REAL Contact Form -->
+        <form class="contact-form">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="John Doe" required class="contact-input" />
+          </label>
 
-        <label>
-          <span>Email</span>
-          <input type="email" placeholder="you@example.com" required class="contact-input" />
-        </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required class="contact-input" />
+          </label>
 
-        <label>
-          <span>Message</span>
-          <textarea rows="5" placeholder="Write your message..." required class="contact-textarea"></textarea>
-        </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Write your message..." required class="contact-textarea"></textarea>
+          </label>
 
-        <button type="submit" class="contact-button">Send Message</button>
-        <p id="form-status" class="contact-status"></p>
-      </form>
+          <button type="submit" class="contact-button">Send Message</button>
+          <p id="form-status" class="contact-status"></p>
+        </form>
 
-      <!-- Empty Right Column for Balance -->
-      <div class="contact-spacer"></div>
+        <div class="contact-spacer"></div>
+      </div>
+
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i> Nagpur, India</div>
+        <div><i class="fas fa-phone-alt"></i> +91 XXXXX XXXXX</div>
+        <div><i class="fas fa-envelope"></i> contact@Digit.x.com</div>
+      </div>
+
+      <div class="contact-social">
+        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+      </div>
     </div>
-
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <div><i class="fas fa-map-marker-alt"></i> Nagpur, India</div>
-      <div><i class="fas fa-phone-alt"></i> +91 XXXXX XXXXX</div>
-      <div><i class="fas fa-envelope"></i> contact@Digit.x.com</div>
-    </div>
-
-    <!-- Social Icons -->
-    <div class="contact-social">
-      <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-

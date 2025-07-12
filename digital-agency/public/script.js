@@ -57,5 +57,38 @@ function rotateCube(direction) {
   document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('form'); // make sure your form is a `<form>` tag
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = contactForm.querySelector('input[name="name"]').value;
+    const email = contactForm.querySelector('input[name="email"]').value;
+    const message = contactForm.querySelector('textarea[name="message"]').value;
+
+    try {
+      const response = await fetch('/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Message sent successfully!');
+        contactForm.reset();
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Something went wrong.');
+    }
+  });
+});
 
 
