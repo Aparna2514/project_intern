@@ -17,6 +17,7 @@
 </head>
 <body>
 
+  <!-- ✅ Navigation -->
   <header>
     <div class="logo">DigitX</div>
     <nav>
@@ -27,17 +28,21 @@
     </nav>
   </header>
 
+  <!-- ✅ Hero Section -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Grow Your Brand with Us</h1>
-      <p>We create digital experiences that convert. SEO, Ads, Design — all in one place.</p>
-      <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })">Get Started</button>
+      <h1>Reach your customers with us</h1>
+      <p>Expand your market with our services. We provide services like SEO, ads to target audience.</p>
+      <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })">
+        Get Started
+      </button>
     </div>
     <div class="hero-animation" id="lottie-animation"></div>
   </section>
 
   <div style="clear: both; height: 40px;"></div>
 
+  <!-- ✅ Services Section -->
   <section id="services" class="content-section">
     <h2>Our Services</h2>
     <div class="service-list">
@@ -47,6 +52,7 @@
     </div>
   </section>
 
+  <!-- ✅ Service Modal -->
   <div id="serviceModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -56,6 +62,7 @@
     </div>
   </div>
 
+  <!-- ✅ Portfolio Section -->
   <section id="portfolio" class="content-section">
     <h2>Portfolio</h2>
     <p>Here are some of the amazing campaigns we've worked on.</p>
@@ -82,7 +89,7 @@
       <h2 class="contact-title">Contact Us</h2>
 
       <div class="contact-flex">
-        <!-- ✅ REAL Contact Form -->
+        <!-- ✅ Contact Form -->
         <form class="contact-form">
           <label>
             <span>Name</span>
@@ -119,7 +126,7 @@
     </div>
   </section>
 
-  <!-- Scripts -->
+  <!-- ✅ Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   <script src="script.js"></script>
 </body>

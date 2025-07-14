@@ -1,3 +1,6 @@
+/* ==========================
+   General & Typography
+========================== */
 html {
   scroll-behavior: smooth;
 }
@@ -9,13 +12,16 @@ body {
   color: #333;
 }
 
+/* ==========================
+   Header & Navigation
+========================== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -34,6 +40,9 @@ nav a {
   font-weight: 500;
 }
 
+/* ==========================
+   Hero Section
+========================== */
 .hero {
   display: flex;
   align-items: center;
@@ -60,7 +69,6 @@ nav a {
   line-height: 1.6;
 }
 
-
 button {
   padding: 12px 25px;
   background-color: #1a56db;
@@ -83,6 +91,9 @@ button:hover {
   position: relative;
 }
 
+/* ==========================
+   Content Section
+========================== */
 .content-section {
   padding: 80px 100px;
   text-align: center;
@@ -100,13 +111,15 @@ button:hover {
   line-height: 1.6;
 }
 
+/* ==========================
+   Services Section
+========================== */
 #services {
   position: relative;
   z-index: 2;
   background-color: #f8fafc;
 }
 
-/* ✅ Services grid */
 .service-list {
   display: flex;
   justify-content: center;
@@ -125,7 +138,6 @@ button:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   font-weight: 500;
   color: #1a56db;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,7 +149,7 @@ button:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Service icons above each block */
+/* Service Icons */
 .service::before {
   content: "";
   display: block;
@@ -149,18 +161,20 @@ button:hover {
 }
 
 .service:nth-child(1)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png'); /* Web Design */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png');
 }
 
 .service:nth-child(2)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png'); /* SEO */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png');
 }
 
 .service:nth-child(3)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png'); /* Marketing */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png');
 }
 
-/* ✅ Modal styles */
+/* ==========================
+   Modal
+========================== */
 .modal {
   display: none;
   position: fixed;
@@ -174,26 +188,24 @@ button:hover {
   align-items: center;
 }
 
-/* ✅ Modal box with floating stars/icons inside only */
 .modal-content {
   background: linear-gradient(145deg, #ffffff, #f5f7fa);
   padding: 40px 30px;
   border-radius: 16px;
   width: 90%;
   max-width: 500px;
-  position: relative;
   text-align: left;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
   animation: fadeInScale 0.4s ease;
+  position: relative;
   overflow: hidden;
 }
 
-/* ✨ Icon-starry pattern inside the modal only */
 .modal-content::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png'),
     url('https://cdn-icons-png.flaticon.com/512/809/809957.png'),
     url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png');
@@ -205,7 +217,6 @@ button:hover {
   z-index: 0;
 }
 
-/* Ensure text floats above background stars */
 .modal-content > * {
   position: relative;
   z-index: 1;
@@ -244,7 +255,6 @@ button:hover {
   color: #333;
 }
 
-/* ✅ Fade-in animation */
 @keyframes fadeInScale {
   0% {
     opacity: 0;
@@ -256,6 +266,9 @@ button:hover {
   }
 }
 
+/* ==========================
+   Cube Section
+========================== */
 .cube-container {
   position: relative;
   width: 300px;
@@ -267,10 +280,10 @@ button:hover {
 .cube {
   width: 100%;
   height: 100%;
-  position: relative;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
   transition: transform 1s;
+  position: relative;
 }
 
 .face {
@@ -288,7 +301,6 @@ button:hover {
   box-sizing: border-box;
 }
 
-/* Define faces' 3D positions */
 .front  { transform: rotateY(0deg) translateZ(150px); }
 .back   { transform: rotateY(180deg) translateZ(150px); }
 .right  { transform: rotateY(90deg) translateZ(150px); }
@@ -296,50 +308,27 @@ button:hover {
 .top    { transform: rotateX(90deg) translateZ(150px); }
 .bottom { transform: rotateX(-90deg) translateZ(150px); }
 
+/* Arrows */
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
-  background: rgba(0,0,0,0.3);
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 10;
-  border-radius: 50%;
-}
-
-.left-arrow {
-  left: -50px;
-}
-
-.right-arrow {
-  right: -50px;
-}
-
-
-.arrow {
+  font-size: 2.5rem;
   background: none;
   border: none;
+  color: #c13584;
   cursor: pointer;
-  font-size: 2.5rem; /* bigger hands */
-  color: #c13584; /* pretty pink */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 10;
+  padding: 10px;
 }
 
 .left-arrow {
-  left: -100px; /* more distance from cube */
+  left: -100px;
 }
 
 .right-arrow {
-  right: -100px; /* more distance from cube */
-}
-
-.arrow:hover {
-  color: #e75480; /* lighter pink on hover */
+  right: -100px;
 }
 
 .arrow:hover {
@@ -347,12 +336,12 @@ button:hover {
   color: #e75480;
 }
 
-
-/* Contact Us Section */
+/* ==========================
+   Contact Section
+========================== */
 .contact-section {
   padding: 60px 20px;
   background-color: #f9fafb;
-  font-family: 'Poppins', sans-serif;
 }
 
 .contact-container {
@@ -468,3 +457,4 @@ button:hover {
 .twitter:hover {
   color: #0d8ddb;
 }
+

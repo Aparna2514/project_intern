@@ -1,5 +1,4 @@
-
-// Lottie animation
+// ✅ Lottie animation
 lottie.loadAnimation({
   container: document.getElementById("lottie-animation"),
   renderer: "svg",
@@ -8,7 +7,7 @@ lottie.loadAnimation({
   path: "https://lottie.host/f0e15067-8a89-4630-bc04-4df90e4f32d4/Q4RAHRgQgy.json"
 });
 
-// ✅ Services modal functionality
+// ✅ Services modal content
 const serviceData = {
   design: {
     title: "Web Design",
@@ -24,6 +23,7 @@ const serviceData = {
   }
 };
 
+// ✅ Open service modal
 function openModal(serviceKey) {
   const modal = document.getElementById('serviceModal');
   const title = document.getElementById('modalTitle');
@@ -34,18 +34,20 @@ function openModal(serviceKey) {
   modal.style.display = "flex";
 }
 
+// ✅ Close service modal
 function closeModal() {
   document.getElementById('serviceModal').style.display = "none";
 }
 
-// Optional: Close modal when clicking outside
-window.addEventListener("click", function(e) {
+// ✅ Optional: Close modal when clicking outside it
+window.addEventListener("click", function (e) {
   const modal = document.getElementById('serviceModal');
   if (e.target === modal) {
     closeModal();
   }
 });
 
+// ✅ 3D Cube Portfolio Rotation
 let angle = 0;
 
 function rotateCube(direction) {
@@ -57,8 +59,9 @@ function rotateCube(direction) {
   document.getElementById("cube").style.transform = `rotateY(${angle}deg)`;
 }
 
+// ✅ Contact form submission logic
 document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.querySelector('form'); // make sure your form is a `<form>` tag
+  const contactForm = document.querySelector('form'); // assumes only one form on the page
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -90,5 +93,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
