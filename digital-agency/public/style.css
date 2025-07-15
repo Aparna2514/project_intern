@@ -1,10 +1,7 @@
 /* ==========================
    General & Typography
 ========================== */
-html {
-  scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -19,12 +16,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 18px 40px;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -46,14 +44,16 @@ nav a {
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;   /* centered because we removed animation */
   padding: 80px 100px;
   flex-wrap: wrap;
   gap: 40px;
+  background: #ffffff;
 }
 
 .hero-text {
-  max-width: 50%;
+  max-width: 600px;
+  text-align: center;
 }
 
 .hero-text h1 {
@@ -79,17 +79,10 @@ button {
   cursor: pointer;
   transition: 0.3s ease;
 }
+button:hover { background-color: #144fc6; }
 
-button:hover {
-  background-color: #144fc6;
-}
-
-.hero-animation {
-  width: 400px;
-  height: 400px;
-  z-index: 1;
-  position: relative;
-}
+/* This class is kept in case JS/CSS references exist, but hidden */
+.hero-animation { display: none; }
 
 /* ==========================
    Content Section
@@ -105,20 +98,12 @@ button:hover {
   color: #1a56db;
 }
 
-.content-section p {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.6;
-}
+.content-section p { font-size: 18px; color: #444; line-height: 1.6; }
 
 /* ==========================
    Services Section
 ========================== */
-#services {
-  position: relative;
-  z-index: 2;
-  background-color: #f8fafc;
-}
+#services { background-color: #f8fafc; }
 
 .service-list {
   display: flex;
@@ -143,11 +128,7 @@ button:hover {
   align-items: center;
   text-align: center;
 }
-
-.service:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
+.service:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
 
 /* Service Icons */
 .service::before {
@@ -159,18 +140,9 @@ button:hover {
   background-repeat: no-repeat;
   margin-bottom: 15px;
 }
-
-.service:nth-child(1)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png');
-}
-
-.service:nth-child(2)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png');
-}
-
-.service:nth-child(3)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png');
-}
+.service:nth-child(1)::before { background-image: url('https://cdn-icons-png.flaticon.com/512/4209/4209072.png'); }
+.service:nth-child(2)::before { background-image: url('https://cdn-icons-png.flaticon.com/512/3771/3771518.png'); }
+.service:nth-child(3)::before { background-image: url('https://cdn-icons-png.flaticon.com/512/1244/1244749.png'); }
 
 /* ==========================
    Modal
@@ -179,15 +151,11 @@ button:hover {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
 }
-
 .modal-content {
   background: linear-gradient(145deg, #ffffff, #f5f7fa);
   padding: 40px 30px;
@@ -200,39 +168,8 @@ button:hover {
   position: relative;
   overflow: hidden;
 }
-
-.modal-content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png'),
-    url('https://cdn-icons-png.flaticon.com/512/809/809957.png'),
-    url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png');
-  background-repeat: repeat;
-  background-size: 18px, 12px, 14px;
-  background-position: 10% 20%, 50% 50%, 80% 30%;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.modal-content > * {
-  position: relative;
-  z-index: 1;
-}
-
-.modal-content h3 {
-  color: #1a56db;
-  margin-bottom: 15px;
-  font-size: 24px;
-}
-
-.modal-content p {
-  color: #333;
-  line-height: 1.6;
-}
-
+.modal-content h3 { color: #1a56db; margin-bottom: 15px; font-size: 24px; }
+.modal-content p { color: #333; line-height: 1.6; }
 .contact-link {
   display: inline-block;
   margin-top: 20px;
@@ -240,7 +177,6 @@ button:hover {
   font-weight: 500;
   text-decoration: underline;
 }
-
 .close {
   position: absolute;
   top: 15px;
@@ -248,213 +184,140 @@ button:hover {
   font-size: 28px;
   color: #999;
   cursor: pointer;
-  z-index: 2;
+}
+.close:hover { color: #333; }
+
+@keyframes fadeInScale {
+  0%   { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-.close:hover {
+
+/* ==========================
+   Responsive Tweaks
+========================== */
+@media (max-width: 1024px) {
+  header { padding: 16px 24px; }
+  .hero { padding: 60px 60px; }
+  .content-section { padding: 60px 60px; }
+}
+
+@media (max-width: 768px) {
+  nav { width: 100%; text-align: center; margin-top: 10px; }
+  nav a { display: inline-block; margin: 6px 10px; }
+
+  .hero { flex-direction: column; padding: 60px 20px; }
+  .hero-text h1 { font-size: 36px; }
+  .hero-text p  { font-size: 16px; }
+
+  .service { width: 180px; padding: 24px 16px; }
+  .cube-container { width: 250px; height: 250px; }
+  .left-arrow { left: -60px; }
+  .right-arrow{ right: -60px; }
+
+  .contact-flex { flex-direction: column; gap: 20px; }
+  .contact-spacer { display: none; }
+}
+
+@media (max-width: 480px) {
+  .service { width: 100%; }
+  .cube-container { width: 200px; height: 200px; }
+  .left-arrow, .right-arrow { display: none; } /* avoids off-screen arrows */
+}
+
+/* 🌟 Portfolio Section */
+.portfolio-section {
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
   color: #333;
 }
 
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ==========================
-   Cube Section
-========================== */
-.cube-container {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-  perspective: 1000px;
-}
-
-.cube {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateY(0deg);
-  transition: transform 1s;
-  position: relative;
-}
-
-.face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #4f46e5;
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
+.testimonials {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #fff;
-  box-sizing: border-box;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.front  { transform: rotateY(0deg) translateZ(150px); }
-.back   { transform: rotateY(180deg) translateZ(150px); }
-.right  { transform: rotateY(90deg) translateZ(150px); }
-.left   { transform: rotateY(-90deg) translateZ(150px); }
-.top    { transform: rotateX(90deg) translateZ(150px); }
-.bottom { transform: rotateX(-90deg) translateZ(150px); }
-
-/* Arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  background: none;
-  border: none;
-  color: #c13584;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  padding: 10px;
+.testimonial {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
 }
 
-.left-arrow {
-  left: -100px;
+.testimonial h4 {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #666;
 }
 
-.right-arrow {
-  right: -100px;
-}
-
-.arrow:hover {
-  transform: translateY(-50%) scale(1.1);
-  color: #e75480;
-}
-
-/* ==========================
-   Contact Section
-========================== */
+/* 📬 Contact Section */
 .contact-section {
-  padding: 60px 20px;
-  background-color: #f9fafb;
-}
-
-.contact-container {
-  max-width: 900px;
-  margin: auto;
-}
-
-.contact-title {
+  padding: 50px 20px;
+  background: #111;
+  color: white;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #111;
 }
 
-.contact-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 .contact-form {
-  flex: 1;
-  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.contact-form label {
-  display: block;
-  margin-bottom: 15px;
-}
-
-.contact-input,
-.contact-textarea {
-  width: 100%;
-  padding: 12px 16px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.contact-input:focus,
-.contact-textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
-  outline: none;
-}
-
-.contact-button {
-  background-color: #2563eb;
-  color: white;
-  padding: 12px 25px;
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.contact-button:hover {
-  background-color: #1e40af;
+.contact-form textarea {
+  resize: vertical;
 }
 
-.contact-status {
-  color: green;
-  margin-top: 12px;
-  font-size: 0.95rem;
+.contact-form button {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s;
 }
 
-.contact-spacer {
-  flex: 1;
-  min-width: 280px;
+.contact-form button:hover {
+  background-color: #019170;
 }
 
-.contact-info {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #333;
-  margin-top: 40px;
-  line-height: 1.8;
-}
+/* 📱 Responsive for smaller phones */
+@media (min-width: 768px) {
+  .testimonials {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-.contact-info i {
-  margin-right: 6px;
+  .testimonial {
+    flex: 0 0 30%;
+  }
 }
-
-.contact-social {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.social-icon {
-  margin: 0 15px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.instagram {
-  color: #e1306c;
-}
-
-.instagram:hover {
-  color: #c13584;
-}
-
-.twitter {
-  color: #1da1f2;
-}
-
-.twitter:hover {
-  color: #0d8ddb;
-}
-
