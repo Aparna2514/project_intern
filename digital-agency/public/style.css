@@ -45,16 +45,17 @@ nav a {
 .hero {
   position: relative;
   background: linear-gradient(to bottom right, #f0f4ff, #e3eafc);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 40px 20px;
-  overflow: hidden;
+  height: auto;
+  min-height: auto;
+  display: flex;
+  justify-content: center;      /* ✅ center horizontally */
+  align-items: flex-start;      /* ✅ align to top vertically */
   text-align: center;
   flex-wrap: wrap;
   gap: 40px;
 }
+
 
 .hero-overlay {
   background-image: radial-gradient(circle at 20% 30%, #cddafd 15%, transparent 50%),
